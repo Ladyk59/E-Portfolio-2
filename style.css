@@ -27,6 +27,18 @@ section {
   background-color: rgb(245, 245, 245);
 }
 
+.container {
+  padding: 50px 0;
+  
+}
+
+.row {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
 .click:hover {
   transform: scale(1.1);
 }
@@ -53,6 +65,7 @@ section {
 
     LANDING PAGE
 */
+
 #landing-page {
   height: 100vh;
   margin-top: 100px;
@@ -115,7 +128,7 @@ section {
 .scroll__icon {
   width: 20px;
   height: 30px;
-  border: 2px solid purple;
+  border: 2px solid white;
   border-radius: 24px;
   display: flex;
   align-items: center;
@@ -126,7 +139,7 @@ section {
   content: "";
   width: 4px;
   height: 6px;
-  background-color: purple;
+  background-color: white;
   border-radius: 2px;
   animation: scroll 1000ms infinite alternate-reverse;
 }
@@ -204,4 +217,92 @@ nav {
 .purple {
   color: purple !important;
   font-weight: bold;
+}
+
+/*
+
+    
+PROJECTS
+
+*/
+.section__title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+
+}
+
+.project__image {
+  width: 100%;
+  display: block;
+  transition: transform 450ms ease, filter 450ms ease;
+}
+
+.project__wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.project__wrapper:hover .project__description {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.project__wrapper:hover .project__image {
+  transform: scale(1.07);
+  filter: blur(5px);
+
+}
+
+
+.project__description {
+  position: absolute;
+  top: 50%;
+  left: 90px;
+  transform: translateY(calc(-50% + 40px));
+  transition: opacity 300ms, transform 450ms ease;
+  opacity: 0;
+  color: white;
+  max-width: 550px;
+  
+}
+
+.project__wrapper:hover .project__wrapper--bg {
+  opacity: 0.7;
+}
+
+.project__wrapper--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1d25;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.project__description--title {
+  font-size: 36px;
+  
+}
+
+.project__description--sub-title {
+  margin-top: 8px;
+}
+
+.project__description--link,
+.project__link {
+  color: white;
+  font-size: 20px;
+  margin-right: 16px;
+}
+
+.project__link i {
+  color: white;
+}
+
+.project__description--para {
+  margin: 16px 0;
 }
