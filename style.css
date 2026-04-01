@@ -457,16 +457,20 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  visibility: hidden;
   z-index: -1;
 }
+
+
+.modal__overlay--loading {
+  background-color: #242424;
+  font-size: 80px;
+}
+
 
 .modal__overlay--visible {
   opacity: 1;
   visibility: visible;
-  z-index: 200;
-}
+  z-index: 1;}
 
 .modal__overlay--loading {
   background-color: rgba(28, 29, 37, 0.9);
@@ -475,8 +479,7 @@ nav {
 }
 
 .modal__overlay--success {
-  background-color: rgba(28, 29, 37, 0.95);
-  color: white;
+  background-color: #4bb543;
   font-size: 40px;
   font-weight: 700;
   text-align: center;

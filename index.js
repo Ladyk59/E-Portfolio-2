@@ -1,29 +1,39 @@
-const form = document.getElementById("contact__form");
-const loadingOverlay = document.querySelector(".modal__overlay--loading");
-const successOverlay = document.querySelector(".modal__overlay--success");
-const closeButtons = document.querySelectorAll(".modal__overlay .modal__exit");
+// template template_erzfcfb 
+// service_jyubzm2
+// FmfPuFkgmoYalVpxn
+      
 
-function hideOverlays() {
-	loadingOverlay?.classList.remove("modal__overlay--visible");
-	successOverlay?.classList.remove("modal__overlay--visible");
+function contact(event) {
+	event.preventDefault();
+	const loading = document.querySelector(".modal__overlay--loading");
+	const success = document.querySelector(".modal__overlay--success");
+	loading.classList.add("modal__overlay--visible");
+
+	emailjs
+		.sendForm(
+			"service_mtod6t3",
+			"template_erzfcfb",
+			event.target
+		).then(() => {
+			loading.classList.remove("modal__overlay--visible");
+			success.classList.add("modal__overlay--visible");
+		}).catch((error) => {
+			loading.classList.remove("modal__overlay--visible");
+			console.error("EmailJS error:", error);
+			alert(
+				"The email service is currently unavailable. Please contact me directly at Kim.Jones5939@gmail.com."
+			);
+		});
 }
 
-if (form && loadingOverlay && successOverlay) {
-	form.addEventListener("submit", (event) => {
-		event.preventDefault();
-
-		hideOverlays();
-		loadingOverlay.classList.add("modal__overlay--visible");
-
-		// Simulate async submit then show success state.
-		window.setTimeout(() => {
-			loadingOverlay.classList.remove("modal__overlay--visible");
-			successOverlay.classList.add("modal__overlay--visible");
-			form.reset();
-		}, 900);
+document.querySelectorAll(".modal__exit").forEach((btn) => {
+	btn.addEventListener("click", () => {
+		document.querySelector(".modal__overlay--loading").classList.remove("modal__overlay--visible");
+		document.querySelector(".modal__overlay--success").classList.remove("modal__overlay--visible");
 	});
-}
-
-closeButtons.forEach((button) => {
-	button.addEventListener("click", hideOverlays);
 });
+	
+
+
+
+
