@@ -30,9 +30,21 @@ document.querySelectorAll(".modal__exit").forEach((btn) => {
 	btn.addEventListener("click", () => {
 		document.querySelector(".modal__overlay--loading").classList.remove("modal__overlay--visible");
 		document.querySelector(".modal__overlay--success").classList.remove("modal__overlay--visible");
+		isModalOpen = false;
+		document.body.classList.remove("modal--open");
 	});
 });
 	
+	let isModalOpen = false;
+	function toggleModal() {
+	if (isModalOpen) {
+		isModalOpen = false;
+		return document.body.classList.remove("modal--open");
+	}
+	isModalOpen = true;
+	document.body.classList.add("modal--open");
+
+}	
 
 
 
