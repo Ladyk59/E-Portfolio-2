@@ -219,6 +219,14 @@ nav,
   color: #fff;
 }
 
+.dark-theme .modal__language i {
+  color: #f06449;
+}
+
+.dark-theme .language__name {
+  color: #fff;
+}
+
 .dark-theme nav {
   background-color: #242424;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.08);
@@ -482,11 +490,12 @@ nav {
 .modal__languages {
   display: flex;
   width: 100%;
+  max-width: 100%;
   margin-top: auto;
   padding-top: 12px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
 .modal__language {
@@ -789,4 +798,51 @@ footer {
 
 .footer__copyright {
   text-align: center;
+}
+
+/*
+
+    SHAPES
+
+*/  
+.shape {
+  position: fixed;
+  transition: transform 500ms ease-out;
+}
+
+.shape--0 {
+    top: 15vh;
+    left: 5vw;
+}
+.shape--1 {
+    top: 15vh;
+    left: 50vw;
+}
+.shape--2{
+    top: 15vh;
+    left: 80vw;
+}
+.shape--3 {
+    top: 50vh;
+    left: 5vw;
+}
+.shape--4 {
+    top: 50vh;
+    left: 50vw;
+}
+.shape--5 {
+    top: 50vh;
+    left: 80vw;
+}
+.shape--6 {
+    top: 80vh;
+    left: 80vw;
+}
+.shape--7 {
+    top: 80vh;
+    left: 50vw;
+}
+.shape--8 {
+    top: 80vh;
+    left: 15vw;
 }
