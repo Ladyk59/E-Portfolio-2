@@ -24,8 +24,29 @@ button {
   cursor: pointer;
 }
 
+body,
+section,
+nav,
+footer,
+.modal__about,
+.modal__contact,
+.title,
+.section__title,
+.section__sub-title,
+.header__para,
+.nav__link--anchor,
+.nav__link--anchor i,
+.fa-circle-half-stroke,
+.mail__btn,
+.scroll__icon,
+.scroll__icon:after,
+.link__hover-effect--black:after {
+  transition: background-color 350ms ease, color 350ms ease, border-color 350ms ease, box-shadow 350ms ease;
+}
+
 section {
   background-color: rgb(245, 245, 245);
+  transition: all 300ms ease;
 }
 
 input, textarea {
@@ -144,16 +165,88 @@ nav,
 .header {
   opacity: 1;
   visibility: visible;
-  transition: all 600ms 800ms;
+  transition: opacity 600ms 800ms, visibility 600ms 800ms;
 
 }
 
 .modal--open nav,
 .modal--open .scroll,
 .modal--open .header {
-  opacity: 1;
+  opacity: 0;
   visibility: hidden;
-  transition: all 400ms;
+  transition: opacity 400ms, visibility 400ms;
+}
+
+#projects,
+.modal__about,
+.modal__contact {
+  transition-delay: 0s !important;
+}
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-circle-half-stroke,
+.dark-theme .header__para 
+{
+  color: #fff;
+}
+
+.dark-theme {
+  background-color: #242424;
+  color: #fff;
+}
+
+.dark-theme section {
+  background-color: #242424;
+
+}
+
+.dark-theme .modal__about,
+.dark-theme .modal__contact {
+  background-color: #242424;
+}
+
+.dark-theme .modal__about,
+.dark-theme .modal__about h2,
+.dark-theme .modal__about h4,
+.dark-theme .modal__about p {
+  color: #fff;
+}
+
+.dark-theme .modal__exit--about {
+  color: #fff;
+}
+
+.dark-theme nav {
+  background-color: #242424;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.08);
+}
+
+.dark-theme .nav__link--anchor,
+.dark-theme .nav__link--anchor i,
+.dark-theme .fa-circle-half-stroke {
+  color: #fff !important;
+}
+
+.dark-theme .link__hover-effect--black:after {
+  background-color: #fff;
+}
+
+.dark-theme .scroll__icon {
+  border-color: #fff;
+}
+
+.dark-theme .scroll__icon:after,
+.dark-theme .link__hover-effect--black:after {
+  background-color: #fff;
+}
+
+.dark-theme .mail__btn {
+  background-color: white;
+  color: #242424;
+ 
 }
 
 /*
